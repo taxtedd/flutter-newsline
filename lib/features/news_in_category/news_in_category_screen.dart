@@ -7,10 +7,7 @@ import '../news_list/news_list_screen.dart';
 class NewsInCategoryScreen extends StatefulWidget {
   final String category;
 
-  const NewsInCategoryScreen({
-    super.key,
-    required this.category
-  });
+  const NewsInCategoryScreen({super.key, required this.category});
 
   @override
   State<NewsInCategoryScreen> createState() => _NewsInCategoryScreenState();
@@ -49,42 +46,42 @@ class _NewsInCategoryScreenState extends State<NewsInCategoryScreen> {
         elevation: 0.0,
         title: Text('News', style: theme.textTheme.labelLarge),
       ),
-      body: _loading ? const Center(
-        child: CircularProgressIndicator(),
-      ) : SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            children: <Widget>[
-              Container(
-                padding: const EdgeInsets.only(top: 5, bottom: 5),
-                height: 70,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: categories.length,
-                    itemBuilder: (context, index) => CategoryTile(
-                      categoryName: categories[index].categoryName,
-                    )
+      body: _loading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.only(top: 5, bottom: 5),
+                      height: 70,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: categories.length,
+                          itemBuilder: (context, index) => CategoryTile(
+                                categoryName: categories[index].categoryName,
+                              )),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(top: 16),
+                      child: ListView.builder(
+                          itemCount: articles.length,
+                          shrinkWrap: true,
+                          physics: const ClampingScrollPhysics(),
+                          itemBuilder: (context, index) => NewslineTile(
+                                imgUrl: articles[index].urlToImage,
+                                title: articles[index].title,
+                                desc: articles[index].description,
+                                url: articles[index].url,
+                              )),
+                    ),
+                  ],
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.only(top: 16),
-                child: ListView.builder(
-                    itemCount: articles.length,
-                    shrinkWrap: true,
-                    physics: const ClampingScrollPhysics(),
-                    itemBuilder: (context, index) => NewslineTile(
-                      imgUrl: articles[index].urlToImage,
-                      title: articles[index].title,
-                      desc: articles[index].description,
-                      url: articles[index].url,
-                    )
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+            ),
     );
   }
 }

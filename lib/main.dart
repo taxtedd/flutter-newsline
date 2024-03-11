@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task1/theme/theme.dart';
 import 'package:flutter_task1/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'features/news_list/news_list_screen.dart';

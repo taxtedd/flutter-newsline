@@ -7,23 +7,23 @@ List<CategoryModel> getCategories() {
   List<CategoryModel> categories = List<CategoryModel>.empty(growable: true);
 
   CategoryModel categoryModel = CategoryModel();
-  categoryModel.categoryName = "General";
+  categoryModel.categoryName = 'General';
   categories.add(categoryModel);
 
   categoryModel = CategoryModel();
-  categoryModel.categoryName = "Health";
+  categoryModel.categoryName = 'Health';
   categories.add(categoryModel);
 
   categoryModel = CategoryModel();
-  categoryModel.categoryName = "Science";
+  categoryModel.categoryName = 'Science';
   categories.add(categoryModel);
 
   categoryModel = CategoryModel();
-  categoryModel.categoryName = "Sports";
+  categoryModel.categoryName = 'Sports';
   categories.add(categoryModel);
 
   categoryModel = CategoryModel();
-  categoryModel.categoryName = "Technology";
+  categoryModel.categoryName = 'Technology';
   categories.add(categoryModel);
 
   return categories;

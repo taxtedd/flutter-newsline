@@ -41,7 +41,7 @@ class _NewsPageScreenState extends State<NewsPageScreen> {
   }
 
   @override
-  Widget build (BuildContext context) {
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return Scaffold(
