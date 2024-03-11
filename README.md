@@ -1,16 +1,13 @@
-# flutter_task1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Мобильное приложение для просмотра новостных статей
+В приложении есть:
+1. Основная страница: отображает новости, полученные с помощью API.
+2. Страницы категорий: отображают новости выбранной категории.
+3. Дополнительный экран: Вторичный экран, доступный из основного, для просмотра выбранной новостной статьи.
+4. Переключение тем: светлая и тёмная.
+## Иллюстрация приложения
+Номера изображений соответсвуют пунктам с особеннастями приложения.
+1. ![image](https://github.com/taxtedd/flutter-task1-newsline/assets/89980575/9371f3a8-1ede-4cdc-a912-2322154a5c84)
+2. ![image](https://github.com/taxtedd/flutter-task1-newsline/assets/89980575/b694e19f-9f2f-4b45-843d-aac11bd8b497)
+3. ![image](https://github.com/taxtedd/flutter-task1-newsline/assets/89980575/d9c7fe8f-a325-4531-b2ed-b2ab2cb59bc3)
+## Стек технологий
+Flutter
