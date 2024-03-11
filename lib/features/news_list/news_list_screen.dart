@@ -49,7 +49,9 @@ class _NewsListScreenState extends State<NewsListScreen> {
         elevation: 0.0,
         title: Text('News', style: theme.textTheme.labelLarge),
         leading: IconButton(
-          icon: const Icon(Icons.dark_mode_outlined),
+          icon: Icon((theme.brightness == Brightness.light)
+              ? Icons.dark_mode_outlined
+              : Icons.light_mode_outlined),
           onPressed: () {
             Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
           },

@@ -6,16 +6,16 @@ class ThemeProvider with ChangeNotifier {
 
   ThemeData get themeData => _themeData;
 
-  set themData(ThemeData themeData) {
+  set themeData(ThemeData themeData) {
     _themeData = themeData;
     notifyListeners();
   }
 
   void toggleTheme() {
     if (_themeData == lightMode) {
-      _themeData = darkMode;
+      themeData = darkMode;
     } else {
-      _themeData = lightMode;
+      themeData = lightMode;
     }
   }
 }
