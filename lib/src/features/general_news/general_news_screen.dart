@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task1/features/news_list/news_list.dart';
-import '../../models/article_model.dart';
-import '../../models/category_model.dart';
-import '../news_list/news_list_screen.dart';
+import 'package:provider/provider.dart';
+import '../article/article_widget.dart';
+import '../category/category_list.dart';
+import '../article/article_model.dart';
+import '../category/category_widget.dart';
+import '../category/category_model.dart';
+import '../../data/news_list_request.dart';
+import '../theme/theme_provider.dart';
 
-class NewsInCategoryScreen extends StatefulWidget {
-  final String category;
-
-  const NewsInCategoryScreen({super.key, required this.category});
+class NewsListScreen extends StatefulWidget {
+  const NewsListScreen({
+    super.key,
+  });
 
   @override
-  State<NewsInCategoryScreen> createState() => _NewsInCategoryScreenState();
+  State<NewsListScreen> createState() => _NewsListScreenState();
 }
 
-class _NewsInCategoryScreenState extends State<NewsInCategoryScreen> {
+class _NewsListScreenState extends State<NewsListScreen> {
   late final List<CategoryModel> categories;
   late final List<ArticleModel> articles;
 
@@ -27,8 +31,8 @@ class _NewsInCategoryScreenState extends State<NewsInCategoryScreen> {
   }
 
   getNews() async {
-    NewsInCategory newsList = NewsInCategory();
-    await newsList.getNewsInCategory(widget.category);
+    News newsList = News();
+    await newsList.getNews();
 
     articles = newsList.news;
     setState(() {
@@ -45,6 +49,14 @@ class _NewsInCategoryScreenState extends State<NewsInCategoryScreen> {
         centerTitle: true,
         elevation: 0.0,
         title: Text('News', style: theme.textTheme.labelLarge),
+        leading: IconButton(
+          icon: Icon((theme.brightness == Brightness.light)
+              ? Icons.dark_mode_outlined
+              : Icons.light_mode_outlined),
+          onPressed: () {
+            Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+          },
+        ),
       ),
       body: _loading
           ? const Center(
@@ -76,6 +88,7 @@ class _NewsInCategoryScreenState extends State<NewsInCategoryScreen> {
                                 title: articles[index].title,
                                 desc: articles[index].description,
                                 url: articles[index].url,
+                                setIsVisible: true,
                               )),
                     ),
                   ],

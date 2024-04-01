@@ -1,7 +1,4 @@
-final class CategoryModel {
-  late String categoryName;
-  late String imgUrl;
-}
+import 'category_model.dart';
 
 List<CategoryModel> getCategories() {
   List<CategoryModel> categories = List<CategoryModel>.empty(growable: true);
@@ -24,6 +21,10 @@ List<CategoryModel> getCategories() {
 
   categoryModel = CategoryModel();
   categoryModel.categoryName = 'Technology';
+  categories.add(categoryModel);
+
+  categoryModel = CategoryModel();
+  categoryModel.categoryName = 'Liked';
   categories.add(categoryModel);
 
   return categories;

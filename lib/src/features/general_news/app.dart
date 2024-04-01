@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task1/theme/theme_provider.dart';
+import 'package:flutter_task1/src/features/theme/theme_provider.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'features/news_list/news_list_screen.dart';
 
-void main() {
+import 'general_news_screen.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Hive.initFlutter();
+  var likedNews = await Hive.openBox('likedNews');
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
