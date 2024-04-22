@@ -30,8 +30,8 @@ class _LikeButtonState extends State<LikeButton> {
               target = target == 40 ? 70 : 40;
             },
             child: Icon(
-              size: val,
               widget.isLiked ? Icons.favorite : Icons.favorite_border,
+              size: val,
               color: widget.isLiked ? Colors.red : Colors.grey,
             ),
           ),

@@ -9,6 +9,7 @@ Future<void> main() async {
 
   await Hive.initFlutter();
   var likedNews = await Hive.openBox('likedNews');
+  likedNews.path;
 
   runApp(
     ChangeNotifierProvider(
