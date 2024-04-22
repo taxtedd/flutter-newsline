@@ -10,7 +10,8 @@
 Изображения расположены в порядке описания особенностей приложения.
 ![Без названия](https://github.com/taxtedd/flutter-newsline/assets/89980575/5e435e6a-38d5-41bf-8c13-dbab7ed41097)
 ![Без названия (1)](https://github.com/taxtedd/flutter-newsline/assets/89980575/c8cb33f2-58ff-42b3-bcdb-269680de60b0)
-![image](https://github.com/taxtedd/flutter-newsline/assets/89980575/e9939457-a914-4f59-b9a7-d47d386c0eb0)
+![8](https://github.com/taxtedd/flutter-newsline/assets/89980575/49a9732c-0bdc-4824-894b-a4c0c250d87a)
+
 
 ## О приложении
 ### Стек технологий
